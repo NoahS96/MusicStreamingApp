@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">MusicStreamingApp</string>
+    <string name="app_name"></string>
+    <string name="login_text">Login</string>
+    <string name="signup_text">Sign Up</string>
+    <string name="email_prompt">Email</string>
+    <string name="password_prompt">Password</string>
+    <string name="submit_text">Submit</string>
+    <string name="conf_password_prompt">Confirm Password</string>
 </resources>
