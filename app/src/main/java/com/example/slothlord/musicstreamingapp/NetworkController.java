@@ -1,8 +1,10 @@
 package com.example.slothlord.musicstreamingapp;
 
 /**
- * Created by slothlord on 11/2/17.
+ * Created by Andrew Schaffer on 11/2/17.
  */
 
 public interface NetworkController {
+
+
 }
