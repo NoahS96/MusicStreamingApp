@@ -24,7 +24,8 @@
         <activity android:name=".SignupActivity" />
         <activity android:name=".NewsFeedActivity" />
         <activity android:name=".RadioStationsActivity" />
-        <activity android:name=".AlarmListActivity" />
+        <activity android:name=".AlarmListActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>
