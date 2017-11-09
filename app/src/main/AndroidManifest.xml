@@ -27,12 +27,6 @@
         <activity
             android:name=".AlarmListActivity"
             android:exported="true" />
-        <activity
-            android:name=".CreateAlarmActivity"
-            android:label="@string/title_activity_create_alarm"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:exported="true"
-            android:parentActivityName=".AlarmListActivity" />
         <!-- The meta-data tag is required if you support API level 15 and lower -->
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
