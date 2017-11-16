@@ -8,6 +8,7 @@
         android:id="@+id/text_view_item_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/AlarmBackground"
         android:textColor="@android:color/background_light"
         android:textSize="50sp" />
 

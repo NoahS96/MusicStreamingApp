@@ -7,25 +7,38 @@ package com.example.slothlord.musicstreamingapp;
 public class Alarm {
     private int hour;
     private int min;
+    private String amOrPm;
     private String alarmName;
 
     public Alarm(int hour, int min){
         this.hour = hour;
         this.min = min;
         this.alarmName = "New Alarm";
+        if(this.getHour() >  12){
+            amOrPm = "PM";
+        }
+        else{
+            amOrPm = "AM";
+        }
     }
 
     public Alarm(int hour, int min, String alarmName){
         this.hour = hour;
         this.min = min;
         this.alarmName = alarmName;
+        if(this.getHour() >  12){
+            amOrPm = "PM";
+        }
+        else{
+            amOrPm = "AM";
+        }
     }
 
     public int getHour() {
-        this.hour = this.hour % 12;
-        if(this.hour == 0){
-            this.hour = 12;
-        }
+      //  this.hour = this.hour % 12;
+        //if(this.hour == 0){
+          //  this.hour = 12;
+        //}
         return this.hour;
     }
 
@@ -51,12 +64,17 @@ public class Alarm {
 
     public String getAlarmTime(){
         String alarmTime;
+        int hour = this.getHour();
+        if (hour > 12){
+            hour = hour%12;
+        }
         if(this.getMin() > 9) {
-            alarmTime = (this.getHour() + ":" + this.getMin());
+            alarmTime = (hour + ":" + this.getMin() + " " + amOrPm);
         }
         else{
-            alarmTime = this.getHour() + ":0" + this.getMin();
+            alarmTime = hour + ":0" + this.getMin()+ " " + amOrPm;
         }
+
         return alarmTime;
     }
 }

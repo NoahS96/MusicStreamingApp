@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class AlarmListActivity extends AppCompatActivity {
 
     private ListView alarmListView;
-    private Button newAlarm;
+    private FloatingActionButton newAlarm;
     // Setup the data source
     //ArrayList<Alarm> itemsArrayList = generateItemsList(); // calls function to get items list
     private Alarms alarms;
@@ -31,7 +31,7 @@ public class AlarmListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm_list);
-        newAlarm = (Button) findViewById(R.id.newAlarmButton);
+        newAlarm = (FloatingActionButton) findViewById(R.id.newAlarmButton);
         alarmListView = (ListView) findViewById(R.id.alarmListView);
         alarms = new Alarms();
         //alarms.addAlarm(new Alarm(10,59, "peter"));
