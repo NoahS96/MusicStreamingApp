@@ -1,58 +1,64 @@
 package com.example.slothlord.musicstreamingapp;
 
-import android.app.Dialog;
-import android.app.DialogFragment;
-import android.app.TimePickerDialog;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TimePicker;
 
-import java.util.Calendar;
+import java.util.ArrayList;
 
 
 public class AlarmListActivity extends AppCompatActivity {
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
-    private RecyclerView.LayoutManager layoutManager;
+
+    private ListView alarmListView;
+    private Button newAlarm;
+    // Setup the data source
+    //ArrayList<Alarm> itemsArrayList = generateItemsList(); // calls function to get items list
+    private Alarms alarms;
+    // instantiate the custom list adapter
+    AlarmListController adapter;
+    private final  int ALARMCODE = 123;
+
+    // get the ListView and attach the adapter
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm_list);
-        //Recycle View
-         recyclerView = (RecyclerView) findViewById(R.id.almRecView);
-        layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
+        newAlarm = (Button) findViewById(R.id.newAlarmButton);
+        alarmListView = (ListView) findViewById(R.id.alarmListView);
+        alarms = new Alarms();
+        //alarms.addAlarm(new Alarm(10,59, "peter"));
+        adapter = new AlarmListController(this, alarms.getAlarms());
+        alarmListView.setAdapter(adapter);
 
 
-        final Button newAlarm = (Button) findViewById(R.id.newAlarm);
     }
 
-    public void newAlarm(View view){
-        //Intent intent = new Intent(this, CreateAlarmActivity.class);
-        //startActivity(intent);
-        DialogFragment newFragment = new TimePickerFragment();
-        newFragment.show(getFragmentManager(), "timePicker");
+
+    public void setNewAlarm(View view){
+        //alarms.addAlarm(new Alarm(7,5,"peter"));
+        //adapter.notifyDataSetChanged();
+        Intent intent = new Intent(this, CreateAlarmActivity.class);
+        startActivityForResult(intent, ALARMCODE);
+
     }
 
-    public static class TimePickerFragment extends DialogFragment implements TimePickerDialog.OnTimeSetListener{
+    @Override
 
-        public Dialog onCreateDialog(Bundle savedInstanceState){
-            final Calendar c = Calendar.getInstance();
-            int hour = c.get(Calendar.HOUR_OF_DAY);
-            int minute = c.get(Calendar.MINUTE);
-
-            return new TimePickerDialog(getActivity(), this, hour, minute, false);
-        }
-        @Override
-        public void onTimeSet(TimePicker timePicker, int i, int i1) {
-
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        if(requestCode == ALARMCODE && resultCode == RESULT_OK ){
+            if (intent.hasExtra("hour") && intent.hasExtra("min")){
+                System.out.println("helloSTUPID " + intent.getExtras().getInt("hour") + ":" + intent.getExtras().getInt("min"));
+                alarms.addAlarm(new Alarm(intent.getExtras().getInt("hour"),intent.getExtras().getInt("min")));
+                adapter.notifyDataSetChanged();
+            }
         }
     }
 }

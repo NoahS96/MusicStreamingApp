@@ -32,7 +32,7 @@
             android:name="android.support.PARENT_ACTIVITY"
             android:value=".AlarmListActivity" />
 
-
+        <activity android:name=".CreateAlarmActivity"></activity>
     </application>
 
 </manifest>
