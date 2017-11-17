@@ -14,7 +14,7 @@ import retrofit2.http.GET;
 public interface APIInterface {
 
     @GET("/createSession.php")
-    Call<User> authenticateUser();
+    Call<User> authenticateUser(@Body User user);
 
     @GET("/addUser.php")
     Call<User> createUser(@Body User user);

@@ -12,10 +12,13 @@ public class User {
     public String email;
 
     @SerializedName("password")
-    public String password;
+    private String password;
 
     @SerializedName("id")
     public String id;
+
+    @SerializedName("status")
+    public String status;
 
     public User(String email, String password) {
         this.email = email;
