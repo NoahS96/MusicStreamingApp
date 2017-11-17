@@ -14,25 +14,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
+        <activity android:name=".CredentialJava.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignupActivity" />
-        <activity android:name=".NewsFeedActivity" />
-        <activity android:name=".RadioStationsActivity" />
+        <activity android:name=".CredentialJava.SignupActivity" />
+        <activity android:name=".NewsfeedJava.NewsFeedActivity" />
+        <activity android:name=".RadioStationJava.RadioStationsActivity" />
         <activity
-            android:name=".AlarmListActivity"
+            android:name=".AlarmJava.AlarmListActivity"
             android:exported="true" />
         <!-- The meta-data tag is required if you support API level 15 and lower -->
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value=".AlarmListActivity" />
+            android:value=".AlarmJava.AlarmListActivity" />
 
-        <activity android:name=".CreateAlarmActivity"></activity>
+        <activity android:name=".AlarmJava.CreateAlarmActivity"></activity>
     </application>
 
 </manifest>

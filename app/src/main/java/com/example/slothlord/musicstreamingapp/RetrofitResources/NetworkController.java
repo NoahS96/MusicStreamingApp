@@ -1,4 +1,4 @@
-package com.example.slothlord.musicstreamingapp;
+package com.example.slothlord.musicstreamingapp.RetrofitResources;
 
 /**
  * Created by Andrew Schaffer on 11/2/17.

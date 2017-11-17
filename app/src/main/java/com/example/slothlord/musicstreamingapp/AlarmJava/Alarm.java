@@ -1,4 +1,4 @@
-package com.example.slothlord.musicstreamingapp;
+package com.example.slothlord.musicstreamingapp.AlarmJava;
 
 /**
  * Created by jperales on 11/12/17.

@@ -1,4 +1,4 @@
-package com.example.slothlord.musicstreamingapp;
+package com.example.slothlord.musicstreamingapp.AlarmJava;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -6,8 +6,11 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.slothlord.musicstreamingapp.AlarmJava.Alarm;
+import com.example.slothlord.musicstreamingapp.AlarmJava.AlarmListActivity;
+import com.example.slothlord.musicstreamingapp.R;
+
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by slothlord on 11/6/17.

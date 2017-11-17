@@ -1,4 +1,6 @@
-package com.example.slothlord.musicstreamingapp;
+package com.example.slothlord.musicstreamingapp.AlarmJava;
+
+import com.example.slothlord.musicstreamingapp.AlarmJava.Alarm;
 
 import java.util.ArrayList;
 
