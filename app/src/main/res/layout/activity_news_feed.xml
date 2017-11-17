@@ -6,54 +6,6 @@
     android:layout_height="match_parent"
     tools:context="com.example.slothlord.musicstreamingapp.NewsfeedJava.NewsFeedActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayoutID"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/cardViewID"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RelativeLayout
-                android:id="@+id/rLayoutID"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/cardImageID"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:src="@color/abc_search_url_text_normal" />
-
-                <TextView
-                    android:id="@+id/cardTitleID"
-                    android:layout_width="match_parent"
-                    android:layout_height="25dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_below="@+id/cardImageID"
-                    android:text="Title" />
-
-                <TextView
-                    android:id="@+id/cardContentID"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_below="@+id/cardTitleID"
-                    android:text="Content" />
-            </RelativeLayout>
-        </android.support.v7.widget.CardView>
-    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
 
 
