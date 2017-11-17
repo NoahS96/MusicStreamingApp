@@ -6,11 +6,12 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.slothlord.musicstreamingapp.R;
 
 
-public class AlarmListActivity extends AppCompatActivity {
+public class AlarmListActivity extends AppCompatActivity implements AlarmListController.customButtonListener {
 
     private ListView alarmListView;
     private FloatingActionButton newAlarm;
@@ -36,6 +37,7 @@ public class AlarmListActivity extends AppCompatActivity {
         //alarms.addAlarm(new Alarm(10,59, "peter"));
         adapter = new AlarmListController(this, alarms.getAlarms());
         alarmListView.setAdapter(adapter);
+        adapter.setCustomButtonListner(this);
 
 
     }
@@ -49,6 +51,11 @@ public class AlarmListActivity extends AppCompatActivity {
 
     }
 
+    public void deleteAlarm(View view){
+
+        adapter.notifyDataSetChanged();
+    }
+
     @Override
 
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
@@ -59,6 +66,12 @@ public class AlarmListActivity extends AppCompatActivity {
                 adapter.notifyDataSetChanged();
             }
         }
+    }
+
+
+    public void onButtonClickListener(int position, String value) {
+        alarms.removeAlarm(position);
+        adapter.notifyDataSetChanged();
     }
 }
 

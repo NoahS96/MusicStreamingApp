@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/text_view_item_name"
+        android:id="@+id/alarmRow"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="146dp"
         android:background="@color/AlarmBackground"
         android:textColor="@android:color/background_light"
         android:textSize="50sp" />
 
+    <ImageButton
+        android:id="@+id/deleteAlarmButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/alarmRow"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="31dp"
+        app:srcCompat="@android:drawable/ic_menu_delete" />
 
-</LinearLayout>
+
+</RelativeLayout>

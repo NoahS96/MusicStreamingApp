@@ -16,6 +16,10 @@ public class Alarms {
         alarms.add(alarm);
     }
 
+    public void removeAlarm(int position){
+        this.alarms.remove(position);
+    }
+
     public ArrayList<Alarm> getAlarms(){
 
         return alarms;
