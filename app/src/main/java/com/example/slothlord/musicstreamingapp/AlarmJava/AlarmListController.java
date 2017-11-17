@@ -1,9 +1,14 @@
 package com.example.slothlord.musicstreamingapp.AlarmJava;
 
+import android.content.Context;
+import android.media.Image;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.slothlord.musicstreamingapp.AlarmJava.Alarm;
@@ -17,6 +22,16 @@ import java.util.ArrayList;
  */
 
 public class AlarmListController extends BaseAdapter {
+    customButtonListener customListener;
+
+    public interface customButtonListener {
+         void onButtonClickListener(int position, String value);
+    }
+
+    public void setCustomButtonListner(customButtonListener listener){
+        this.customListener = listener;
+    }
+
 
     private AlarmListActivity alarmListActivity;
     private ArrayList<Alarm> alarms;
@@ -32,7 +47,7 @@ public class AlarmListController extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int i) {
+    public Alarm getItem(int i) {
         return alarms.get(i);
     }
 
@@ -42,26 +57,44 @@ public class AlarmListController extends BaseAdapter {
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
+    public View getView(final int i, View view, ViewGroup viewGroup) {
+        ViewHolder viewHolder;
         if (view == null) {
             view = LayoutInflater.from(alarmListActivity).
                     inflate(R.layout.alarm_list_view_row_items, null, false);
+            viewHolder = new ViewHolder();
+            viewHolder.text = (TextView) view.findViewById(R.id.alarmRow);
+            viewHolder.button = (ImageButton) view.findViewById(R.id.deleteAlarmButton);
+            view.setTag(viewHolder);
+        }
+        else{
+            viewHolder = (ViewHolder) view.getTag();
         }
 
         // get current item to be displayed
-        Alarm alarm = (Alarm) getItem(i);
+        //final Alarm alarm = (Alarm) getItem(i);
 
         // get the TextView for item name and item description
-        TextView textViewItemName = (TextView)
-                view.findViewById(R.id.text_view_item_name);
-        //TextView textViewItemDescription = (TextView)
-          //      view.findViewById(R.id.text_view_item_description);
+        //TextView textViewItemName = (TextView)
+                //view.findViewById(R.id.alarmRow);
 
         //sets the text for item name and item description from the current item object
-        textViewItemName.setText(alarm.getAlarmTime());
-        //textViewItemDescription.setText(currentItem.getItemDescription());
+        //textViewItemName.setText(alarm.getAlarmTime());
 
-        // returns the view for the current row
+        final String temp = getItem(i).getAlarmTime();
+        viewHolder.text.setText(temp);
+        viewHolder.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(customListener != null){
+                    customListener.onButtonClickListener(i,temp);
+                }
+            }
+        });
         return view;
+    }
+    public class ViewHolder{
+        TextView text;
+        ImageButton button;
     }
 }
