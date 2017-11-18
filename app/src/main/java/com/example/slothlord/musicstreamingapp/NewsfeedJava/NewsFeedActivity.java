@@ -1,39 +1,36 @@
 package com.example.slothlord.musicstreamingapp.NewsfeedJava;
 
-import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import com.example.slothlord.musicstreamingapp.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class NewsFeedActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private CardAdapter adapter;
-    private List<NewsCard> cardList;
+    private ArrayList<NewsCard> cardList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_feed);
 
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView = (RecyclerView) findViewById(R.id.cardView);
 
         cardList = new ArrayList<>();
-        adapter = new CardAdapter(this, cardList);
+
+        adapter = new CardAdapter(cardList);
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setAdapter(adapter);
-        retrieveNews();
 
+        retrieveNews();
 
 
 

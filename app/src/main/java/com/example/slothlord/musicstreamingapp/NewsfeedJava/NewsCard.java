@@ -14,18 +14,19 @@ import java.util.List;
 public class NewsCard {
     private String title;
     private String description;
-    private int background;
+    private int backgroundId;
+
 
     NewsCard(String title, String description, int background) {
         this.title = title;
         this.description = description;
-        this.background = background;
+        this.backgroundId = background;
     }
 
     NewsCard() {
         this.title = "";
         this.description = "";
-        this.background = 0;
+        this.backgroundId = 0;
     }
 
     public String getTitle() { return title; }
@@ -36,8 +37,8 @@ public class NewsCard {
 
     public void setDescription() { this.description = description; }
 
-    public int getBackground() { return background; }
+    public int getBackground() { return backgroundId; }
 
-    public void setBackground() { this.background = background; }
+    public void setBackground() { this.backgroundId = backgroundId; }
 
 }
