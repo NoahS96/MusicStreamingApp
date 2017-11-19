@@ -21,13 +21,13 @@ import retrofit2.Response;
 
 public class LoginController { //extends AsyncTask<Void, Void, Void> {
 
-    NetworkController net_info = new NetworkController();
+    //NetworkController net_info = new NetworkController();
 
-    public void checkCredentials(String username, String password) {
+    public void checkCredentials(String email, String password) {
 
-        User user = new User(username, password);
+        User user = new User(email, password);
         APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);
-        Call call = apiInterface.authenticateUser(user);
+        Call call = apiInterface.authenticateUser(email, password);
 
         call.enqueue(new Callback() {
             @Override
@@ -35,8 +35,9 @@ public class LoginController { //extends AsyncTask<Void, Void, Void> {
                 Log.d("TAG", response.code()+"");
                 String displayResponse = "";
 
-                User user1 = (User) response.body();
-                System.out.println("Response:\n\tResponse: " + user1.status + "\tEmail: " + user1.email + "\tID: " + user1.id);
+                System.out.println("Response: " + response);
+                //User user1 = (User) response.body();
+                //System.out.println("Response:\n\tResponse: " + user1.status + "\tEmail: " + user1.email + "\tID: " + user1.id);
 
             }
 

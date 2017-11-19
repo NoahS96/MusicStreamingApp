@@ -5,7 +5,11 @@ import com.example.slothlord.musicstreamingapp.POJO.User;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.Field;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
+import retrofit2.http.Query;
+import retrofit2.http.Url;
 
 /**
  * Created by Andrew Schaffer on 11/16/2017.
@@ -13,9 +17,10 @@ import retrofit2.http.GET;
 
 public interface APIInterface {
 
-    @GET("/createSession.php")
-    Call<User> authenticateUser(@Body User user);
+    @POST("/createSession.php")
+    Call<User> authenticateUser(@Field("email") String email, @Field("password") String password);
 
-    @GET("/addUser.php")
-    Call<User> createUser(@Body User user);
+    //This one might need to separate the field
+    @POST("/addUser.php")
+    Call<User> createUser(@Field("user") User user);
 }
