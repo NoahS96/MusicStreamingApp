@@ -20,7 +20,6 @@ public interface APIInterface {
     @GET("/createSession.php")
     Call<User> authenticateUser(@Query("email") String email, @Query("password") String password);
 
-    //This one might need to separate the field
-    @POST("/addUser.php")
+    @GET("/addUser.php")
     Call<User> createUser(@Query("email") String email, @Query("password") String password);
 }
