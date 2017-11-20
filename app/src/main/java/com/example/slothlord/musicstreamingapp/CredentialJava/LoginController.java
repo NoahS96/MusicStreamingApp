@@ -2,12 +2,9 @@ package com.example.slothlord.musicstreamingapp.CredentialJava;
 
 
 import com.example.slothlord.musicstreamingapp.POJO.User;
-import com.example.slothlord.musicstreamingapp.POJO.createUserResponse;
 import com.example.slothlord.musicstreamingapp.RetrofitResources.APIClient;
 import com.example.slothlord.musicstreamingapp.RetrofitResources.APIInterface;
-import com.example.slothlord.musicstreamingapp.RetrofitResources.NetworkController;
 
-import android.os.AsyncTask;
 import android.util.Log;
 
 import retrofit2.Call;
@@ -21,13 +18,11 @@ import retrofit2.Response;
 
 public class LoginController { //extends AsyncTask<Void, Void, Void> {
 
-    //NetworkController net_info = new NetworkController();
-
+    //Should change the return type to boolean or User
     public void checkCredentials(String email, String password) {
 
-        User user = new User(email, password);
+        //User user = new User(email, password);
         APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);
-        //Call<User> call = apiInterface.authenticateUser("'" + email + "'", "'" + password + "'");
         Call<User> call = apiInterface.authenticateUser(email, password);
 
         call.enqueue(new Callback<User>() {
@@ -37,9 +32,7 @@ public class LoginController { //extends AsyncTask<Void, Void, Void> {
                 String displayResponse = "";
 
                 System.out.println("Response: " + response);
-                //User user1 = (User) response.body();
-                //System.out.println("Response:\n\tResponse: " + user1.status + "\tEmail: " + user1.email + "\tID: " + user1.id);
-
+                //Place response variables in a User object
             }
 
             @Override
@@ -51,9 +44,4 @@ public class LoginController { //extends AsyncTask<Void, Void, Void> {
 
 
     }
-
-    /*@Override
-    protected Void doInBackground(Void... arg0) {
-
-    }*/
 }

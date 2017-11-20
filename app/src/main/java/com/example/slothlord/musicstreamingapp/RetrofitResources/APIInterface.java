@@ -22,5 +22,5 @@ public interface APIInterface {
 
     //This one might need to separate the field
     @POST("/addUser.php")
-    Call<User> createUser(@Field("user") User user);
+    Call<User> createUser(@Query("email") String email, @Query("password") String password);
 }

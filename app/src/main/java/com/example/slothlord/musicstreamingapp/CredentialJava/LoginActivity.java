@@ -1,14 +1,12 @@
 package com.example.slothlord.musicstreamingapp.CredentialJava;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Toast;
 
-import com.example.slothlord.musicstreamingapp.NewsfeedJava.NewsFeedActivity;
 import com.example.slothlord.musicstreamingapp.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -33,6 +31,8 @@ public class LoginActivity extends AppCompatActivity {
                     LoginController controller = new LoginController();
                     System.out.println("Email: " + email + "\tPassword: " + password);
                     controller.checkCredentials(email, password);
+                } else {
+                    Toast.makeText(view.getContext(), "Fill all input areas", Toast.LENGTH_SHORT);
                 }
 
                 //Intent myIntent = new Intent(view.getContext(), NewsFeedActivity.class);
