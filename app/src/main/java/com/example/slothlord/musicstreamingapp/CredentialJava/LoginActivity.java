@@ -1,5 +1,6 @@
 package com.example.slothlord.musicstreamingapp.CredentialJava;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +19,7 @@ public class LoginActivity extends AppCompatActivity {
 
         final EditText email_input = (EditText) findViewById(R.id.email_input);
         final EditText password_input = (EditText) findViewById(R.id.password_input);
+        final Context myContext = this;
 
 
         Button login = (Button) findViewById(R.id.login_button);
@@ -32,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
                     System.out.println("Email: " + email + "\tPassword: " + password);
                     controller.checkCredentials(email, password);
                 } else {
-                    Toast.makeText(view.getContext(), "Fill all input areas", Toast.LENGTH_SHORT);
+                    Toast.makeText(myContext, "Fill all input areas", Toast.LENGTH_SHORT);
                 }
 
                 //Intent myIntent = new Intent(view.getContext(), NewsFeedActivity.class);
