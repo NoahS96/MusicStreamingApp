@@ -17,8 +17,8 @@ import retrofit2.http.Url;
 
 public interface APIInterface {
 
-    @POST("/createSession.php")
-    Call<User> authenticateUser(@Field("email") String email, @Field("password") String password);
+    @GET("/createSession.php")
+    Call<User> authenticateUser(@Query("email") String email, @Query("password") String password);
 
     //This one might need to separate the field
     @POST("/addUser.php")

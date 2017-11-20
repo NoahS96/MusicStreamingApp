@@ -27,11 +27,12 @@ public class LoginController { //extends AsyncTask<Void, Void, Void> {
 
         User user = new User(email, password);
         APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);
-        Call call = apiInterface.authenticateUser(email, password);
+        //Call<User> call = apiInterface.authenticateUser("'" + email + "'", "'" + password + "'");
+        Call<User> call = apiInterface.authenticateUser(email, password);
 
-        call.enqueue(new Callback() {
+        call.enqueue(new Callback<User>() {
             @Override
-            public void onResponse(Call call, Response response) {
+            public void onResponse(Call<User> call, Response<User> response) {
                 Log.d("TAG", response.code()+"");
                 String displayResponse = "";
 
