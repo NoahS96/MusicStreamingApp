@@ -8,8 +8,8 @@
     <TextView
         android:id="@+id/alarmRow"
         android:layout_width="match_parent"
-        android:layout_height="146dp"
-        android:background="@color/AlarmBackground"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
         android:textColor="@android:color/background_light"
         android:textSize="50sp" />
 
@@ -17,10 +17,11 @@
         android:id="@+id/deleteAlarmButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/alarmRow"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="30dp"
+        android:layout_alignParentTop="true"
         android:layout_marginEnd="31dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorPrimaryDark"
         app:srcCompat="@android:drawable/ic_menu_delete" />
 
 
