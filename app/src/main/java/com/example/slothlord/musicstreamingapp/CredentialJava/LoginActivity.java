@@ -1,6 +1,7 @@
 package com.example.slothlord.musicstreamingapp.CredentialJava;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.slothlord.musicstreamingapp.NewsfeedJava.NewsFeedActivity;
 import com.example.slothlord.musicstreamingapp.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -25,6 +27,13 @@ public class LoginActivity extends AppCompatActivity {
         Button login = (Button) findViewById(R.id.login_button);
         login.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                Intent myIntent = new Intent(view.getContext(), NewsFeedActivity.class);
+                startActivityForResult(myIntent, 0);
+            }
+
+        });
+    }
+           /* public void onClick(View view) {
 
                 String email = email_input.getText().toString();
                 String password = password_input.getText().toString();
@@ -36,10 +45,7 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(myContext, "Fill all input areas", Toast.LENGTH_SHORT);
                 }
-
-                //Intent myIntent = new Intent(view.getContext(), NewsFeedActivity.class);
-                //startActivityForResult(myIntent, 0);
             }
 
-        });    }
+        });*/
 }
