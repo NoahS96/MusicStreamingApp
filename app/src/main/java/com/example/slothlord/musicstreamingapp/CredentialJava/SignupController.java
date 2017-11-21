@@ -16,24 +16,22 @@ import retrofit2.Response;
 
 public class SignupController {
 
-    public void addUser(String email, String password, String password_conf) {
+    User user = null;
 
-        if (!password.equals(password_conf)) {
-            //Password conf must match password
-            return;
-        }
+    public User addUser(String email, String password, String password_conf) {
 
         APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);
         Call<User> call = apiInterface.createUser(email, password);
 
+        //Use execute instead
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 Log.d("TAG", response.code()+"");
-                String displayResponse = "";
+                user = response.body();
 
                 System.out.println("Response: " + response);
-                //Place response variables in a User object
+                System.out.println(user.toString());
             }
 
             @Override
@@ -42,5 +40,7 @@ public class SignupController {
                 System.out.println("Authentication Call Failed");
             }
         });
+
+        return user;
     }
 }

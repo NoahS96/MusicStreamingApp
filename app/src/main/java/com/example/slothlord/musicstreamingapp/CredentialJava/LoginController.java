@@ -13,15 +13,15 @@ import retrofit2.Response;
 
 /**
  * Created by Andrew Schaffer on 10/27/2017.
- * www.journaldev.com/13639/retrofit-android-example-tutorial
  */
 
 public class LoginController { //extends AsyncTask<Void, Void, Void> {
 
-    //Should change the return type to boolean or User
-    public void checkCredentials(String email, String password) {
+    User user = null;
 
-        //User user = new User(email, password);
+    //Should change the return type to boolean or User
+    public User checkCredentials(String email, String password) {
+
         APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);
         Call<User> call = apiInterface.authenticateUser(email, password);
 
@@ -29,10 +29,9 @@ public class LoginController { //extends AsyncTask<Void, Void, Void> {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 Log.d("TAG", response.code()+"");
-                String displayResponse = "";
-
+                user = response.body();
                 System.out.println("Response: " + response);
-                //Place response variables in a User object
+                System.out.println(user.toString());
             }
 
             @Override
@@ -42,6 +41,6 @@ public class LoginController { //extends AsyncTask<Void, Void, Void> {
             }
         });
 
-
+        return user;
     }
 }
