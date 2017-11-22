@@ -6,6 +6,8 @@ import com.example.slothlord.musicstreamingapp.POJO.User;
 import com.example.slothlord.musicstreamingapp.RetrofitResources.APIClient;
 import com.example.slothlord.musicstreamingapp.RetrofitResources.APIInterface;
 
+import java.io.IOException;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -23,8 +25,14 @@ public class SignupController {
         APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);
         Call<User> call = apiInterface.createUser(email, password);
 
+        try {
+            user = call.execute().body();
+        } catch (IOException e) {
+            System.err.println("Server Comms Error: " + e);
+            user = null;
+        }
         //Use execute instead
-        call.enqueue(new Callback<User>() {
+        /*call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 Log.d("TAG", response.code()+"");
@@ -39,7 +47,7 @@ public class SignupController {
                 call.cancel();
                 System.out.println("Authentication Call Failed");
             }
-        });
+        });*/
 
         return user;
     }

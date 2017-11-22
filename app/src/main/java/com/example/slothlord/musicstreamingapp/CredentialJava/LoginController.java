@@ -7,6 +7,8 @@ import com.example.slothlord.musicstreamingapp.RetrofitResources.APIInterface;
 
 import android.util.Log;
 
+import java.io.IOException;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -25,7 +27,13 @@ public class LoginController { //extends AsyncTask<Void, Void, Void> {
         APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);
         Call<User> call = apiInterface.authenticateUser(email, password);
 
-        call.enqueue(new Callback<User>() {
+        try {
+            user = call.execute().body();
+        } catch (IOException e) {
+            System.err.println("Server Comms Error: " + e);
+            user = null;
+        }
+        /*call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 Log.d("TAG", response.code()+"");
@@ -39,7 +47,7 @@ public class LoginController { //extends AsyncTask<Void, Void, Void> {
                 call.cancel();
                 System.out.println("Authentication Call Failed");
             }
-        });
+        });*/
 
         return user;
     }
