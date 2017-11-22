@@ -60,9 +60,10 @@ public class AlarmListActivity extends AppCompatActivity implements AlarmListCon
 
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
         if(requestCode == ALARMCODE && resultCode == RESULT_OK ){
-            if (intent.hasExtra("hour") && intent.hasExtra("min")){
-                System.out.println("helloSTUPID " + intent.getExtras().getInt("hour") + ":" + intent.getExtras().getInt("min"));
-                alarms.addAlarm(new Alarm(intent.getExtras().getInt("hour"),intent.getExtras().getInt("min")));
+            if (intent.hasExtra("hour") && intent.hasExtra("min") ){
+                alarms.addAlarm(new Alarm(intent.getExtras().getInt("hour"),intent.getExtras().getInt("min"),
+                        intent.getExtras().getInt("month"), intent.getExtras().getInt("day"), intent.getExtras().getInt("year"),
+                        intent.getExtras().getString("title")));
                 adapter.notifyDataSetChanged();
             }
         }
