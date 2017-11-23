@@ -9,4 +9,6 @@
     <string name="new_alarm">New Alarm</string>
     <string name="title_activity_create_alarm">createAlarmActivity</string>
     <string name="ok">OK</string>
+    <string name="button">Create</string>
+    <string name="delete">Delete</string>
 </resources>
