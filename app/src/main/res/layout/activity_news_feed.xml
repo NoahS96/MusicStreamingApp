@@ -10,6 +10,7 @@
     <include
         android:id="@+id/tool_bar"
         layout="@layout/tool_bar"
+        android:textColor="@android:color/background_light"
         ></include>
     <TextView
         android:layout_below="@+id/tool_bar"
@@ -21,5 +22,5 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"/>
 </RelativeLayout>

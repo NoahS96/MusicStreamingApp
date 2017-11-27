@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -14,6 +17,8 @@ import java.util.ArrayList;
 
 public class NewsFeedActivity extends AppCompatActivity {
 
+    private Toolbar toolbar;
+
     private RecyclerView recyclerView;
     private CardAdapter adapter;
     private ArrayList<NewsCard> cardList;
@@ -21,7 +26,12 @@ public class NewsFeedActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_news_feed);
+
+        toolbar = (Toolbar) findViewById(R.id.tool_bar); // Attaching the layout to the toolbar object
+        setSupportActionBar(toolbar);                   // Setting toolbar as the ActionBar with setSupportActionBar() call
+        toolbar.bringToFront();
 
         recyclerView = (RecyclerView) findViewById(R.id.cardView);
 
