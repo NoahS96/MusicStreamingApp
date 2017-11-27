@@ -22,7 +22,7 @@ import java.util.ArrayList;
  * Created by slothlord on 11/6/17.
  */
 
-public class AlarmListController extends BaseAdapter {
+public class AlarmListAdapter extends BaseAdapter {
     customButtonListener customListener;
 
     public interface customButtonListener {
@@ -37,7 +37,7 @@ public class AlarmListController extends BaseAdapter {
     private AlarmListActivity alarmListActivity;
     private ArrayList<Alarm> alarms;
 
-    public AlarmListController(AlarmListActivity alarmListActivity, ArrayList<Alarm>alarms){
+    public AlarmListAdapter(AlarmListActivity alarmListActivity, ArrayList<Alarm>alarms){
         this.alarmListActivity = alarmListActivity;
         this.alarms = alarms;
     }

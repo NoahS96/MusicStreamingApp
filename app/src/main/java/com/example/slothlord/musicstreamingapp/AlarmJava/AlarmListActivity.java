@@ -6,12 +6,11 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.slothlord.musicstreamingapp.R;
 
 
-public class AlarmListActivity extends AppCompatActivity implements AlarmListController.customButtonListener {
+public class AlarmListActivity extends AppCompatActivity implements AlarmListAdapter.customButtonListener {
 
     private ListView alarmListView;
     private FloatingActionButton newAlarm;
@@ -19,7 +18,7 @@ public class AlarmListActivity extends AppCompatActivity implements AlarmListCon
     //ArrayList<Alarm> itemsArrayList = generateItemsList(); // calls function to get items list
     private Alarms alarms;
     // instantiate the custom list adapter
-    AlarmListController adapter;
+    AlarmListAdapter adapter;
     private final  int ALARMCODE = 123;
 
     // get the ListView and attach the adapter
@@ -35,7 +34,7 @@ public class AlarmListActivity extends AppCompatActivity implements AlarmListCon
         alarmListView = (ListView) findViewById(R.id.alarmListView);
         alarms = new Alarms();
         //alarms.addAlarm(new Alarm(10,59, "peter"));
-        adapter = new AlarmListController(this, alarms.getAlarms());
+        adapter = new AlarmListAdapter(this, alarms.getAlarms());
         alarmListView.setAdapter(adapter);
         adapter.setCustomButtonListner(this);
 

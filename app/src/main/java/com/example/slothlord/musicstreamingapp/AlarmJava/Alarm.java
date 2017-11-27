@@ -12,6 +12,7 @@ public class Alarm {
     private String alarmName;
     private String date = null;
     private String monthName;
+    private String stationName;
 
     public Alarm(int hour, int min){
         this.hour = hour;
