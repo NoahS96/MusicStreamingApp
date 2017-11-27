@@ -8,20 +8,24 @@ import com.google.gson.annotations.SerializedName;
 
 public class User {
 
+    @SerializedName("status")
+    public String status;
+
     @SerializedName("email")
     public String email;
-
-    @SerializedName("password")
-    private String password;
 
     @SerializedName("id")
     public String id;
 
-    @SerializedName("status")
-    public String status;
+    public String getStatus() {
+        return status;
+    }
 
-    public User(String email, String password) {
-        this.email = email;
-        this.password = password;
+    public String getEmail() { return email; }
+
+    public String getId() { return id; }
+
+    public String toString() {
+        return "[User: [status : " + this.status + " email : " + this.email + ", ID : " + this.id + "]]";
     }
 }

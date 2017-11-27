@@ -2,13 +2,17 @@ package com.example.slothlord.musicstreamingapp.AlarmJava;
 
 /**
  * Created by jperales on 11/12/17.
- * Alarm Object that has an hour and minute
+ * Alarm Object that has a date, time, and name
  */
 public class Alarm {
+    private int month, day, year;
     private int hour;
     private int min;
     private String amOrPm;
     private String alarmName;
+    private String date = null;
+    private String monthName;
+    private String stationName;
 
     public Alarm(int hour, int min){
         this.hour = hour;
@@ -22,10 +26,67 @@ public class Alarm {
         }
     }
 
-    public Alarm(int hour, int min, String alarmName){
+    public Alarm(int hour, int min, int month, int day, int year, String alarmName){
         this.hour = hour;
         this.min = min;
         this.alarmName = alarmName;
+        this.month = month;
+        this.day = day;
+        this.year = year;
+        monthName = null;
+
+        switch (month) {
+            case 0:
+                monthName = "Jan.";
+                break;
+
+            case 1:
+                monthName = "Feb.";
+                break;
+
+            case 2:
+                monthName = "Mar.";
+                break;
+
+            case 3:
+                monthName = "Apr.";
+                break;
+
+            case 4:
+                monthName = "May";
+                break;
+
+            case 5:
+                monthName = "Jun.";
+                break;
+
+            case 6:
+                monthName = "Jul.";
+                break;
+
+            case 7:
+                monthName = "Aug.";
+                break;
+
+            case 8:
+                monthName = "Sept.";
+
+                break;
+
+            case 9:
+                monthName = "Oct.";
+                break;
+
+            case 10:
+                monthName = "Nov.";
+                break;
+
+            case 11:
+                monthName = "Dec";
+                break;
+
+        }
+
         if(this.getHour() >  12){
             amOrPm = "PM";
         }
@@ -76,5 +137,10 @@ public class Alarm {
         }
 
         return alarmTime;
+    }
+
+    public String getDate(){
+        date = monthName + " " + day + ", " + year;
+        return date;
     }
 }

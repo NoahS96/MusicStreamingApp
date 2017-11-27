@@ -1,5 +1,6 @@
 package com.example.slothlord.musicstreamingapp.CredentialJava;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,7 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
+        final Context context = this;
         final EditText email_input = (EditText) findViewById(R.id.new_email_input);
         final EditText password_input = (EditText) findViewById(R.id.new_password_input);
         final EditText password_conf_input = (EditText) findViewById(R.id.new_conf_password);
@@ -28,12 +30,17 @@ public class SignupActivity extends AppCompatActivity {
                 String password = password_input.getText().toString();
                 String password_conf = password_conf_input.getText().toString();
 
-                if (!email.isEmpty() && !password.isEmpty() && !password_conf.isEmpty()) {
-                    SignupController controller = new SignupController();
+                if (!password.equals(password_conf)) {
+                    Toast.makeText(getApplicationContext(), "Passwords do not match", Toast.LENGTH_SHORT).show();
+                } else if (!(email.isEmpty()) && !(password.isEmpty()) && !(password_conf.isEmpty())) {
+                    SignupController controller = new SignupController(context);
                     controller.addUser(email, password, password_conf);
+
                 } else {
-                    Toast.makeText(view.getContext(), "Fill all input areas", Toast.LENGTH_SHORT);
+                    Toast.makeText(getApplicationContext(), "Fill all input areas", Toast.LENGTH_SHORT).show();
                 }
+
+
             }
         });
     }
