@@ -33,7 +33,7 @@ public class CardAdapter extends RecyclerView.Adapter<MyViewHolder> {
     public void onBindViewHolder(final MyViewHolder holder, int position) {
         holder.title.setText(list.get(position).getTitle());
         holder.description.setText(list.get(position).getDescription());
-        holder.background.setImageResource(list.get(position).getBackground());
+        holder.background.setImageResource(R.mipmap.ic_launcher);
     }
 
     @Override

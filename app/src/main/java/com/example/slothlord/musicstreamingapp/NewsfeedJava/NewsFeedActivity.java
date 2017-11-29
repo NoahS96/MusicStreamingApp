@@ -32,25 +32,22 @@ public class NewsFeedActivity extends AppCompatActivity {
 
         retrieveNews();
 
-
-
-
     }
 
     private void retrieveNews() {
-        NewsCard n = new NewsCard("Hello", "Hey there!", 0);
+        NewsCard n = new NewsCard("Hello", "Hey there!", R.mipmap.im_music);
         cardList.add(n);
 
-        n = new NewsCard("World", "Hey there!", 0);
+        n = new NewsCard("World", "lk;af asdlk;fj aslk;dfj a;sldfj asdjf lk;asdjf ;ladjsfl;asjk df;lkadfjs ", R.mipmap.im_music);
         cardList.add(n);
 
-        n = new NewsCard("1", "Hey there!", 0);
+        n = new NewsCard("1", "Hey there!", R.mipmap.im_music);
         cardList.add(n);
 
-        n = new NewsCard("2", "Hey there!", 0);
+        n = new NewsCard("2", "Hey there!", R.mipmap.im_music);
         cardList.add(n);
 
-        n = new NewsCard("3", "Hey there!", 0);
+        n = new NewsCard("3", "Hey there!", R.mipmap.im_music);
         cardList.add(n);
 
         adapter.notifyDataSetChanged();
