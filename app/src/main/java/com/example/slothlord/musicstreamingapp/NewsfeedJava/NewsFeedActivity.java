@@ -35,19 +35,16 @@ public class NewsFeedActivity extends AppCompatActivity {
     }
 
     private void retrieveNews() {
-        NewsCard n = new NewsCard("Hello", "Hey there!", R.mipmap.im_music);
+        NewsCard n = new NewsCard("The 'Despacito' Story Continues", "The \"Despacito\" phenomenon continues with this morning's announcement of the 2018 Grammy nominations.", R.mipmap.card1bkg);
         cardList.add(n);
 
-        n = new NewsCard("World", "lk;af asdlk;fj aslk;dfj a;sldfj asdjf lk;asdjf ;ladjsfl;asjk df;lkadfjs ", R.mipmap.im_music);
+        n = new NewsCard("Grammy Nominations Name", "Name Kendrick Lamar, Luis Fonsi, Kesha In Top Categories", R.mipmap.card2bkg);
         cardList.add(n);
 
-        n = new NewsCard("1", "Hey there!", R.mipmap.im_music);
+        n = new NewsCard("Steely Dan Inc. Fights Itself In Lawsuit Over Shares", "Steely Dan, the artistic partnership of Donald Fagen and Walter Becker", R.mipmap.card3bkg);
         cardList.add(n);
 
-        n = new NewsCard("2", "Hey there!", R.mipmap.im_music);
-        cardList.add(n);
-
-        n = new NewsCard("3", "Hey there!", R.mipmap.im_music);
+        n = new NewsCard("Celebrating 100 Years Of Bernstein With Gianandrea Noseda", "In Washington, D.C., the choice was made with astonishing harmony.", R.mipmap.card4bkg);
         cardList.add(n);
 
         adapter.notifyDataSetChanged();
