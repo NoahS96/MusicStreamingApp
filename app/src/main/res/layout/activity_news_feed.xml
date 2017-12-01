@@ -7,17 +7,17 @@
 
     tools:context=".MainActivity">
 
-    <include
-        android:id="@+id/tool_bar"
-        layout="@layout/tool_bar"
-        android:textColor="@android:color/background_light"
-        ></include>
-    <TextView
-        android:layout_below="@+id/tool_bar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="hello scrub" />
+        <include
+         android:id="@+id/tool_bar"
+         layout="@layout/tool_bar"
+            android:textColor="@android:color/background_light">
+
+        </include>
+        <TextView
+            android:layout_below="@+id/tool_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/cardView"

@@ -27,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
         Button login = (Button) findViewById(R.id.login_button);
         login.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-
+                /*
                 String email = email_input.getText().toString();
                 String password = password_input.getText().toString();
 
@@ -39,9 +39,9 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(getApplicationContext(), "Fill all input areas", Toast.LENGTH_SHORT).show();
                 }
-
-                //Intent myIntent = new Intent(view.getContext(), NewsFeedActivity.class);
-                //startActivityForResult(myIntent, 0);
+                */
+                Intent myIntent = new Intent(view.getContext(), NewsFeedActivity.class);
+                startActivityForResult(myIntent, 0);
             }
 
         });
