@@ -11,4 +11,5 @@
     <string name="ok">OK</string>
     <string name="button">Create</string>
     <string name="delete">Delete</string>
+    <string name="Title">Music App</string>
 </resources>
