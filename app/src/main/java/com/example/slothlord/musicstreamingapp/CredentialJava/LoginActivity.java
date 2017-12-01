@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.slothlord.musicstreamingapp.NewsfeedJava.NewsFeedActivity;
 import com.example.slothlord.musicstreamingapp.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -49,7 +50,8 @@ public class LoginActivity extends AppCompatActivity {
         signup_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent iSignup = new Intent(context, SignupActivity.class);
+//                Intent iSignup = new Intent(context, SignupActivity.class);
+                Intent iSignup = new Intent(context, NewsFeedActivity.class);
                 startActivity(iSignup);
             }
         });

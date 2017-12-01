@@ -1,5 +1,6 @@
 package com.example.slothlord.musicstreamingapp.NewsfeedJava;
 
+import android.media.Image;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
@@ -21,7 +22,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
         super(v);
         title = (TextView) v.findViewById(R.id.card_title);
         description = (TextView) v.findViewById(R.id.card_description);
-        background = (ImageView) v.findViewById(R.id.background);
+        background = (ImageView) v.findViewById(R.id.backgroundId);
         background.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

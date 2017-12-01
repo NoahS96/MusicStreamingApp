@@ -31,14 +31,14 @@ public class NewsCard {
 
     public String getTitle() { return title; }
 
-    public void setTitle() { this.title = title; }
+    public void setTitle(String title) { this.title = title; }
 
     public String getDescription() { return description; }
 
-    public void setDescription() { this.description = description; }
+    public void setDescription(String description) { this.description = description; }
 
     public int getBackground() { return backgroundId; }
 
-    public void setBackground() { this.backgroundId = backgroundId; }
+    public void setBackground(int backgroundId) { this.backgroundId = backgroundId; }
 
 }
