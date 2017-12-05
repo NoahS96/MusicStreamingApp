@@ -65,7 +65,7 @@ public final class MediaPlayerHolder implements PlayerAdapter {
                 mContext.getResources().openRawResourceFd(mResourceId);
         try {
             logToUI("load() {1. setDataSource}");
-           // mMediaPlayer.setDataSource(assetFileDescriptor);
+            mMediaPlayer.setDataSource(assetFileDescriptor);
         } catch (Exception e) {
             logToUI(e.toString());
         }

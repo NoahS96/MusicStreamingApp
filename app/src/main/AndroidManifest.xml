@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.SET_ALARM" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCAT`ION" />
     <uses-permission android:name="android.permission.MEDIA_CONTENT_CONTROL" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
@@ -27,7 +27,8 @@
         </activity>
         <activity android:name=".CredentialJava.SignupActivity" />
         <activity android:name=".NewsfeedJava.NewsFeedActivity" />
-        <activity android:name=".RadioStationJava.RadioStationsActivity" />
+        <activity android:name=".RadioStationJava.RadioStationsActivity"
+            />
         <activity
             android:name=".AlarmJava.AlarmListActivity"
             android:exported="true" />
@@ -37,7 +38,8 @@
             android:value=".AlarmJava.AlarmListActivity" />
 
         <activity android:name=".AlarmJava.CreateAlarmActivity" />
-        <activity android:name=".MediaPlayer.MediaPlayerActivity"></activity>
+        <activity android:name=".MediaPlayer.MediaPlayerActivity"
+            android:exported="true"></activity>
     </application>
 
 </manifest>

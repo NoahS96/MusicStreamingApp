@@ -22,7 +22,9 @@ public class NewsFeedActivity extends AppCompatActivity {
 
         recyclerView = (RecyclerView) findViewById(R.id.cardView);
 
-        cardList = new ArrayList<>();
+
+
+                 cardList = new ArrayList<>();
 
         adapter = new CardAdapter(cardList);
 
