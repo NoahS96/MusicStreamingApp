@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.slothlord.musicstreamingapp.MediaPlayer.MediaPlayerActivity;
 import com.example.slothlord.musicstreamingapp.NewsfeedJava.NewsFeedActivity;
 import com.example.slothlord.musicstreamingapp.R;
 
