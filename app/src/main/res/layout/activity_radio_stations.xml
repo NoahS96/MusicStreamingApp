@@ -42,7 +42,7 @@
         android:layout_height="125dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/rock_album"
+        android:background="@drawable/r_album_cover"
         android:text="@string/rock_genre"
         android:textColor="@android:color/background_light"
         android:textSize="24sp"
