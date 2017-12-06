@@ -5,7 +5,7 @@ android {
     buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.example.slothlord.musicstreamingapp"
-        minSdkVersion 25
+        minSdkVersion 24
 
         targetSdkVersion 25
         versionCode 1
