@@ -6,4 +6,93 @@
     android:layout_height="match_parent"
     tools:context="com.example.slothlord.musicstreamingapp.RadioStationJava.RadioStationsActivity">
 
+    <Button
+        android:id="@+id/rap_button"
+        android:layout_width="165dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rap_album"
+        android:text="@string/rap_genre"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/pop_button"
+        android:layout_width="165dp"
+        android:layout_height="125dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/pop_album"
+        android:text="@string/pop_genre"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/rap_button"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/rock_button"
+        android:layout_width="165dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/r_album_cover"
+        android:text="@string/rock_genre"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rap_button" />
+
+    <Button
+        android:id="@+id/Alternative_button"
+        android:layout_width="165dp"
+        android:layout_height="125dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/alt_album"
+        android:text="@string/alt_genre"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/rap_button"
+        app:layout_constraintTop_toBottomOf="@+id/pop_button" />
+
+    <Button
+        android:id="@+id/jazz_button"
+        android:layout_width="165dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/jazz_album"
+        android:text="@string/jazz_genre"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rock_button" />
+
+    <Button
+        android:id="@+id/punk_button"
+        android:layout_width="165dp"
+        android:layout_height="125dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/punk_album"
+        android:text="@string/punk_genre"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/jazz_button"
+        app:layout_constraintTop_toBottomOf="@+id/Alternative_button" />
 </android.support.constraint.ConstraintLayout>
