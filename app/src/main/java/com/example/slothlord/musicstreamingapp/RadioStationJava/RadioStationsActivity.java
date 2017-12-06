@@ -19,6 +19,7 @@ public class RadioStationsActivity extends AppCompatActivity {
     String genre;
     Intent intent;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

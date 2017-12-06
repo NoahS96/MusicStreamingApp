@@ -16,6 +16,7 @@
 
 package com.example.slothlord.musicstreamingapp.MediaPlayer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -26,6 +27,7 @@ import android.widget.ScrollView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.example.slothlord.musicstreamingapp.AlarmJava.Alarm;
 import com.example.slothlord.musicstreamingapp.R;
 
 /**
@@ -36,11 +38,25 @@ import com.example.slothlord.musicstreamingapp.R;
 public final class MediaPlayerActivity extends AppCompatActivity {
 
     public static final String TAG = "MainActivity";
-   public static final int MEDIA_RES_ID = R.raw.superawesomesong;
+   public static  int MEDIA_RES_ID;
 
 
     private PlayerAdapter mPlayerAdapter;
     private boolean mUserIsSeeking = false;
+
+
+    /*protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        if(requestCode == ALARMCODE && resultCode == RESULT_OK ){
+            if (intent.hasExtra("hour") && intent.hasExtra("min") ){
+                alarms.addAlarm(new Alarm(intent.getExtras().getInt("hour"),intent.getExtras().getInt("min"),
+                        intent.getExtras().getInt("month"), intent.getExtras().getInt("day"), intent.getExtras().getInt("year"),
+                        intent.getExtras().getString("title")));
+                adapter.notifyDataSetChanged();
+            }
+        }
+    }*/
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,11 +66,23 @@ public final class MediaPlayerActivity extends AppCompatActivity {
 
         initializePlaybackController();
         Log.d(TAG, "onCreate: finished");
+
+
+        //Bundle extras = getIntent().getExtras();
+        if(getIntent().hasExtra("pop")){
+            MEDIA_RES_ID = R.raw.superawesomesong;
+        }
+
+        if(getIntent().hasExtra("rap")){
+            MEDIA_RES_ID = R.raw.othersong;
+        }
+
     }
 
     @Override
     protected void onStart() {
         super.onStart();
+
         //This will hold the name of the station
         mPlayerAdapter.loadMedia(MEDIA_RES_ID);
         Log.d(TAG, "onStart: create MediaPlayer");
