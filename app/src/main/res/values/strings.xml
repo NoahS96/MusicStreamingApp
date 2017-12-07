@@ -11,4 +11,18 @@
     <string name="ok">OK</string>
     <string name="button">Create</string>
     <string name="delete">Delete</string>
+    <string name="rock_genre">Rock</string>
+    <string name="pop_genre">Pop</string>
+    <string name="rap_genre">Rap</string>
+    <string name="alt_genre">Alternative</string>
+    <string name="jazz_genre">Jazz</string>
+    <string name="punk_genre">Punk</string>
+    <string name="Title">Swag Music</string>
+    <string name="drawer_open">Open Navigation Drawer</string>
+    <string name="drawer_close">Close Navigation Drawer</string>
+    <string name="action_settings">Settings</string>
+    <string name="Alarm">Alarm</string>
+    <string name="Player">Player</string>
+    <string name="News_Feed">News Feed</string>
+    <string name="Radios">Radios</string>
 </resources>
