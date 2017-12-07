@@ -16,6 +16,7 @@
 
 package com.example.slothlord.musicstreamingapp.MediaPlayer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -26,6 +27,7 @@ import android.widget.ScrollView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.example.slothlord.musicstreamingapp.AlarmJava.Alarm;
 import com.example.slothlord.musicstreamingapp.R;
 
 /**
