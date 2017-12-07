@@ -13,19 +13,19 @@ import java.util.List;
 
 public class NewsCard {
     private String title;
-    private String description;
+//    private String description;
     private int backgroundId;
 
 
-    NewsCard(String title, String description, int background) {
+    NewsCard(String title, int background) {
         this.title = title;
-        this.description = description;
+//        this.description = description;
         this.backgroundId = background;
     }
 
     NewsCard() {
         this.title = "";
-        this.description = "";
+//        this.description = "";
         this.backgroundId = 0;
     }
 
@@ -33,9 +33,9 @@ public class NewsCard {
 
     public void setTitle(String title) { this.title = title; }
 
-    public String getDescription() { return description; }
+//    public String getDescription() { return description; }
 
-    public void setDescription(String description) { this.description = description; }
+//    public void setDescription(String description) { this.description = description; }
 
     public int getBackground() { return backgroundId; }
 

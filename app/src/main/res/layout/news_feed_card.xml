@@ -52,14 +52,6 @@
                     android:textColor="#FFFFFF"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/card_description"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:textSize="20dp"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold" />
             </LinearLayout>
 
         </LinearLayout>

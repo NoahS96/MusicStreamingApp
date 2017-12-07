@@ -15,13 +15,13 @@ import com.example.slothlord.musicstreamingapp.R;
 public class MyViewHolder extends RecyclerView.ViewHolder {
 
     public TextView title;
-    public TextView description;
+//    public TextView description;
     public ImageView background;
 
     public MyViewHolder(View v) {
         super(v);
         title = (TextView) v.findViewById(R.id.card_title);
-        description = (TextView) v.findViewById(R.id.card_description);
+//        description = (TextView) v.findViewById(R.id.card_description);
         background = (ImageView) v.findViewById(R.id.backgroundId);
         background.setOnClickListener(new View.OnClickListener() {
             @Override
