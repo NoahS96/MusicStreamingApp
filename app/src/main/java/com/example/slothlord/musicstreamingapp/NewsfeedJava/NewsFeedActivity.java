@@ -1,5 +1,6 @@
 package com.example.slothlord.musicstreamingapp.NewsfeedJava;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -14,19 +15,30 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.slothlord.musicstreamingapp.AlarmJava.AlarmListActivity;
 import com.example.slothlord.musicstreamingapp.MediaPlayer.MediaPlayerActivity;
+import com.example.slothlord.musicstreamingapp.POJO.NewsArticle;
+import com.example.slothlord.musicstreamingapp.POJO.User;
 import com.example.slothlord.musicstreamingapp.R;
 import com.example.slothlord.musicstreamingapp.RadioStationJava.RadioStationsActivity;
+import com.example.slothlord.musicstreamingapp.RetrofitResources.APIClient;
+import com.example.slothlord.musicstreamingapp.RetrofitResources.APIInterface;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class NewsFeedActivity extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener {
@@ -35,6 +47,8 @@ public class NewsFeedActivity extends AppCompatActivity
     private RecyclerView recyclerView;
     private CardAdapter adapter;
     private ArrayList<NewsCard> cardList;
+    final NewsArticle news = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,17 +87,30 @@ public class NewsFeedActivity extends AppCompatActivity
 
     //}
 
+    // Maximum width of images only from 300 to 500 pixels
     private void retrieveNews() {
-        NewsCard n = new NewsCard("The 'Despacito' Story Continues", R.mipmap.card1bkg);
-        cardList.add(n);
-
-        n = new NewsCard("Grammy Nominations Name", R.mipmap.card2bkg);
-        cardList.add(n);
-
-        n = new NewsCard("Steely Dan Inc. Fights Itself In Lawsuit Over Shares", R.mipmap.card3bkg);
-        cardList.add(n);
-
-        n = new NewsCard("Celebrating 100 Years Of Bernstein With Gianandrea Noseda", R.mipmap.card4bkg);
+//        String description = "";
+//        String imageDir = "";
+//
+//        APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);
+//        Call<NewsArticle> call = apiInterface.createNews(description, imageDir);
+//
+//        call.enqueue(new Callback<NewsArticle>() {
+//            @Override
+//            public void onResponse(Call<NewsArticle> call, Response<NewsArticle> response) {
+//
+//                System.out.println("Response: " + response);
+//                System.out.println(call.toString());
+//
+//            }
+//
+//            @Override
+//            public void onFailure(Call call, Throwable t) {
+//                call.cancel();
+//                System.out.println("Authentication Call Failed");
+//            }
+//        });
+        NewsCard n = new NewsCard("The 'Despacito' Story Continues", R.drawable.taylor_grammy);
         cardList.add(n);
 
         adapter.notifyDataSetChanged();

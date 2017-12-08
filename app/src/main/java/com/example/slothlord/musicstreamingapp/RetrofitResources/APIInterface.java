@@ -1,6 +1,7 @@
 package com.example.slothlord.musicstreamingapp.RetrofitResources;
 
 import com.example.slothlord.musicstreamingapp.POJO.MultipleResource;
+import com.example.slothlord.musicstreamingapp.POJO.NewsArticle;
 import com.example.slothlord.musicstreamingapp.POJO.User;
 
 import retrofit2.Call;
@@ -22,4 +23,7 @@ public interface APIInterface {
 
     @GET("/addUser.php")
     Call<User> createUser(@Query("email") String email, @Query("password") String password);
+
+    @GET("/getnews.php")
+    Call<NewsArticle>  createNews(@Query("article_text") String description, @Query("article_image") String imagePath);
 }
