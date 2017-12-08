@@ -25,5 +25,5 @@ public interface APIInterface {
     Call<User> createUser(@Query("email") String email, @Query("password") String password);
 
     @GET("/getnews.php")
-    Call<NewsArticle>  createNews(@Query("article_text") String description, @Query("article_image") String imagePath);
+    Call<NewsArticle>  getNews();
 }

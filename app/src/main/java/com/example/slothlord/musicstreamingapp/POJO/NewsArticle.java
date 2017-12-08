@@ -13,4 +13,16 @@ public class NewsArticle {
 
     @SerializedName("article_image")
     public String imagePath;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public String toString() {
+        return "[NewsArticle: [description : " + this.description + " imagePath : " + this.imagePath + "]]";
+    }
 }

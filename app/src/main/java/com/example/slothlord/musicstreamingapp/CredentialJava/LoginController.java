@@ -22,7 +22,7 @@ import retrofit2.Response;
  * Created by Andrew Schaffer on 10/27/2017.
  */
 
-public class LoginController { //extends AsyncTask<Void, Void, Void> {
+public class LoginController {
 
     User user = null;
     volatile Context cxt;
