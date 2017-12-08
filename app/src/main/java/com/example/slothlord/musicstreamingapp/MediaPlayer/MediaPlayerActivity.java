@@ -38,7 +38,7 @@ import com.example.slothlord.musicstreamingapp.R;
 public final class MediaPlayerActivity extends AppCompatActivity {
 
     public static final String TAG = "MainActivity";
-    public static final int MEDIA_RES_ID = R.raw.superawesomesong;
+    public static  int MEDIA_RES_ID;
 
 
     private PlayerAdapter mPlayerAdapter;
@@ -57,9 +57,36 @@ public final class MediaPlayerActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
+        if (getIntent().hasExtra("rap")){
+            MEDIA_RES_ID = R.raw.rap;
+        }
+
+        if (getIntent().hasExtra("pop")){
+            MEDIA_RES_ID = R.raw.pop;
+        }
+
+        if (getIntent().hasExtra("rock")){
+            MEDIA_RES_ID = R.raw.rock;
+        }
+
+        if (getIntent().hasExtra("alternative")){
+            MEDIA_RES_ID = R.raw.alternative;
+        }
+
+        if (getIntent().hasExtra("jazz")){
+            MEDIA_RES_ID = R.raw.jazz;
+        }
+
+        if (getIntent().hasExtra("punk")){
+            MEDIA_RES_ID = R.raw.punk;
+        }
+
+
         //This will hold the name of the station
         mPlayerAdapter.loadMedia(MEDIA_RES_ID);
-        Log.d(TAG, "onStart: create MediaPlayer");
+        mPlayerAdapter.play();
+
     }
 
     @Override
