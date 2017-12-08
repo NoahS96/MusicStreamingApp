@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name"></string>
+    <string name="app_name">Rowdy Music</string>
     <string name="login_text">Login</string>
     <string name="signup_text">Sign Up</string>
     <string name="email_prompt">Email</string>
@@ -25,4 +25,9 @@
     <string name="Player">Player</string>
     <string name="News_Feed">News Feed</string>
     <string name="Radios">Radios</string>
+    <string name="pause_music">Pause Music</string>
+    <string name="music_volume">Music volume</string>
+    <string name="play_music">Play Music</string>
+    <string name="skip_to_next_track">Skip to Next Track</string>
+    <string name="station_image">Station Image</string>
 </resources>

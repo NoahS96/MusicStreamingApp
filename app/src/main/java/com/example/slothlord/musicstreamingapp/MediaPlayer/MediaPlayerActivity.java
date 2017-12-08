@@ -103,7 +103,7 @@ public final class MediaPlayerActivity extends AppCompatActivity {
     private void initializeUI() {
 
         ImageButton mPlayButton = (ImageButton) findViewById(R.id.play);
-        ImageButton mPauseButton = (ImageButton) findViewById(R.id.previous);
+        ImageButton mPauseButton = (ImageButton) findViewById(R.id.pause);
         ImageButton mResetButton = (ImageButton) findViewById(R.id.next);
 
 
