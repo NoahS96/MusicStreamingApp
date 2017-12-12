@@ -1,44 +1,24 @@
 package com.example.slothlord.musicstreamingapp.NewsfeedJava;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.slothlord.musicstreamingapp.AlarmJava.AlarmListActivity;
 import com.example.slothlord.musicstreamingapp.MediaPlayer.MediaPlayerActivity;
-import com.example.slothlord.musicstreamingapp.POJO.NewsArticle;
-import com.example.slothlord.musicstreamingapp.POJO.User;
 import com.example.slothlord.musicstreamingapp.R;
 import com.example.slothlord.musicstreamingapp.RadioStationJava.RadioStationsActivity;
-import com.example.slothlord.musicstreamingapp.RetrofitResources.APIClient;
-import com.example.slothlord.musicstreamingapp.RetrofitResources.APIInterface;
 
 import java.util.ArrayList;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class NewsFeedActivity extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener {
@@ -47,7 +27,6 @@ public class NewsFeedActivity extends AppCompatActivity
     private RecyclerView recyclerView;
     private CardAdapter adapter;
     private ArrayList<NewsCard> cardList;
-    final NewsArticle news = null;
 
 
     @Override
