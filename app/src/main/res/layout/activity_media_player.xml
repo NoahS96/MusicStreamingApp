@@ -7,7 +7,7 @@
     tools:context="com.example.slothlord.musicstreamingapp.MediaPlayer.MediaPlayerActivity">
 
     <ImageButton
-        android:id="@+id/previous"
+        android:id="@+id/pause"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -15,7 +15,8 @@
         app:layout_constraintEnd_toStartOf="@+id/play"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/sound"
-        app:srcCompat="@android:drawable/ic_media_previous" />
+        app:srcCompat="@android:drawable/ic_media_pause"
+        android:contentDescription="@string/pause_music"/>
 
     <ImageView
         android:id="@+id/albumCover"
@@ -28,17 +29,19 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/im_music" />
+        app:srcCompat="@mipmap/im_music"
+        android:contentDescription="@string/station_image"/>
 
     <ImageButton
         android:id="@+id/sound"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginStart="92dp"
+        android:layout_marginStart="68dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/ic_lock_silent_mode_off" />
+        app:srcCompat="@android:drawable/ic_lock_silent_mode_off"
+        android:contentDescription="@string/music_volume"/>
 
     <ImageButton
         android:id="@+id/play"
@@ -47,7 +50,8 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/next"
-        app:srcCompat="@android:drawable/ic_media_play" />
+        app:srcCompat="@android:drawable/ic_media_play"
+        android:contentDescription="@string/play_music"/>
 
     <ImageButton
         android:id="@+id/next"
@@ -57,5 +61,6 @@
         android:layout_marginEnd="92dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/ic_media_next" />
+        app:srcCompat="@android:drawable/ic_media_next"
+        android:contentDescription="@string/skip_to_next_track"/>
 </android.support.constraint.ConstraintLayout>
